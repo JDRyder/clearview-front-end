@@ -1,9 +1,6 @@
 <h1>Contact us</h1>
 
 <form *ngIf="!success" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
-
-    <!-- <h5 *ngIf="success">Your form is valid!</h5> -->
-
     <label>
       Email:
       <input type="text" formControlName="email">
@@ -22,11 +19,12 @@
     </label>
 
     <input type="submit" value="Send message" class="cta">
-  
   </form>
-
+  
   <div *ngIf="success" class="results">
-    <p>Thank you for your email. Someone will be in touch soon.</p>
+    <p>
+      <ngb-alert [type]="successalert.type" (closed)="close(successalert)">{{ successalert.message }}</ngb-alert><!-- Thank you for your email. Someone will be in touch soon. -->
+    </p>
     <strong>email:</strong> 
     <span>{{ emailForm.controls.email.value }}</span>
 

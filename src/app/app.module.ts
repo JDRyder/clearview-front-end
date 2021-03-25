@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { DownloadsComponent } from './downloads/downloads.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { DownloadsComponent } from './downloads/downloads.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    DownloadsComponent
+    DownloadsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
